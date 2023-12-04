@@ -1,38 +1,52 @@
-.App {
+.home-container {
   text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 10%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.book-list {
+  list-style: none;
+  padding: 0;
+  max-height: 360px;
+  overflow-y: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.book-list-item {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.book-description {
+  text-align: start;
+  font-size: 12px;
+}
+
+.action-list {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 4px;
+}
+
+.book-tag {
+  background-color: #ff0000;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 12px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.action-button {
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.action-button:hover {
+  background-color: #ccc;
 }
