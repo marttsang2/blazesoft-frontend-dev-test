@@ -51,7 +51,7 @@ const EditBookDialog: React.FC<EditBookDialogProps> = ({ isOpen, onClose, editBo
             </label>
             <label>
                 Description:
-                <textarea name="description" />
+                <textarea name="description" defaultValue={prevBook.description} />
             </label>
             <button type='submit'>Submit</button>
         </form>
