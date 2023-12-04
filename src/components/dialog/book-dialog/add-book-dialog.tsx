@@ -1,6 +1,6 @@
 import React from 'react'
 import PopupDialog, { PopupDialogProps } from '../base';
-import './add-book-dialog.css'
+import './book-dialog.css'
 import { Book } from '../../../types/common';
 
 type AddBookDialogProps = PopupDialogProps & { addBook: (book: Book) => void }
@@ -31,15 +31,15 @@ const AddBookDialog: React.FC<AddBookDialogProps> = ({ isOpen, onClose, addBook 
         <form className='form_wrapper' onSubmit={handleSubmit}>
             <label>
                 <span>Name:</span>
-                <input type="text" name="name" />
+                <input type="text" name="name" required />
             </label>
             <label>
                 <span>Price:</span>
-                <input type="number" name="price" />
+                <input type="number" name="price" min={0} max={9999} required />
             </label>
             <label>
                 <span>Category:</span>
-                <select name="category">
+                <select name="category" required>
                     <option value="mystery">Mystery</option>
                     <option value="romance">Romance</option>
                     <option value="science-fiction">Science Fiction</option>
@@ -48,7 +48,7 @@ const AddBookDialog: React.FC<AddBookDialogProps> = ({ isOpen, onClose, addBook 
             </label>
             <label>
                 <span>Description:</span>
-                <textarea name="description" />
+                <textarea name="description" required />
             </label>
             <button type='submit'>Submit</button>
         </form>

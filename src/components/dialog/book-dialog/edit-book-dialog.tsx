@@ -1,6 +1,6 @@
 import React from 'react'
 import PopupDialog, { PopupDialogProps } from '../base';
-import './edit-book-dialog.css'
+import './book-dialog.css'
 import { Book } from '../../../types/common';
 
 type EditBookDialogProps = PopupDialogProps & { 
@@ -33,16 +33,16 @@ const EditBookDialog: React.FC<EditBookDialogProps> = ({ isOpen, onClose, editBo
         <h2>Edit Book</h2>
         <form className='form_wrapper' onSubmit={handleSubmit}>
             <label>
-                Name:
-                <input type="text" name="name" defaultValue={prevBook.name} />
+                <span>Name:</span>
+                <input type="text" name="name" defaultValue={prevBook.name} required />
             </label>
             <label>
-                Price:
-                <input type="number" name="price" defaultValue={prevBook.price} />
+                <span>Price:</span>
+                <input type="number" name="price" defaultValue={prevBook.price} required />
             </label>
             <label>
-                Category:
-                <select name="category" defaultValue={prevBook.category}>
+                <span>Category:</span>
+                <select name="category" defaultValue={prevBook.category} required>
                     <option value="mystery">Mystery</option>
                     <option value="romance">Romance</option>
                     <option value="science-fiction">Science Fiction</option>
@@ -50,8 +50,8 @@ const EditBookDialog: React.FC<EditBookDialogProps> = ({ isOpen, onClose, editBo
                 </select>
             </label>
             <label>
-                Description:
-                <textarea name="description" defaultValue={prevBook.description} />
+                <span>Description:</span>
+                <textarea name="description" defaultValue={prevBook.description} required />
             </label>
             <button type='submit'>Submit</button>
         </form>

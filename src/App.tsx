@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
-import AddBookDialog from './components/dialog/add-book-dialog/add-book-dialog';
+import AddBookDialog from './components/dialog/book-dialog/add-book-dialog';
 import { useBook } from './hooks/use-book';
-import EditBookDialog from './components/dialog/edit-book-dialog/edit-book-dialog';
+import EditBookDialog from './components/dialog/book-dialog/edit-book-dialog';
 import { Book } from './types/common';
 
 export default function App() {
